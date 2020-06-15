@@ -1,0 +1,63 @@
+
+rus=[]
+eng=[]
+def translate (rus,eng):
+    w1=input("русское слово: ")
+    if w1 in rus:
+        a=rus.txt(w1)
+        print(eng[a])
+    else:
+        print("Такого слова нет в словаре")
+        menu
+def translate (eng,rus):
+    w2=input("Eng word: ")
+    if w2 in eng:
+        b=eng.txt(w2)
+        print(rus[b])
+    else:
+        print("No word in dictionary")
+        menu
+
+def translate_T():
+    while 1:
+        a=input("1-English->Russian \n 2-Russian->English\n")
+        if a == "1":
+            translate(eng, rus)
+            break
+        elif a=="2":
+            translate(rus, eng)
+            break
+        else:
+            print ("Нужно написать 1 либо 2")
+           
+def add_word(rus,eng):
+    lang=input("На каком языке хотите добавить слово, eng или rus?" + "\n")
+    if lang == "eng":
+        word1=input("Enter the word: ")
+        
+        word3=input("Введите перевод: ")
+        
+        eng.append(word1)
+        rus.append(word3)
+    elif lang == "rus":
+        word2=input("Введите слово: ")
+        
+        word4=input("Enter the translate: ")
+        
+        rus.append(word2)
+        eng.append(word4)
+        
+def menu():
+    while 1:
+        v=input("Menu:\nadd word\ntranslate \n")
+        if v =="stop":
+            break
+        elif v =="add word":
+            add_word(rus,eng)
+        elif v =="translate":
+            translate_T()
+a=input("Menu y/n")
+if a=="y":
+    menu()
+else:
+    print("")
